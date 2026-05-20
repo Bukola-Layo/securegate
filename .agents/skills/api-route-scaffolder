@@ -1,0 +1,25 @@
+# Workflow: Create New API Route
+
+## Goal
+Create a secure and functional API endpoint.
+
+## Steps
+1. Define endpoint purpose
+2. Choose HTTP method
+3. Create route file in `/app/api`
+4. Use API Route Scaffolder skill
+5. Validate request input
+6. Implement logic
+7. Add error handling
+8. Return structured response
+9. Test with Postman or frontend
+
+## Checklist
+- [ ] Input validated
+- [ ] Errors handled safely
+- [ ] No sensitive leaks
+- [ ] Correct status codes
+- [ ] Works end-to-end
+
+## Output
+A production-ready API route

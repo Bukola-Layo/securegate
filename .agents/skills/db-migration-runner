@@ -1,0 +1,41 @@
+
+---
+
+# skills/db-migration-runner/SKILL.md
+
+```md
+# DB Migration Runner Skill
+
+## Purpose
+Manage and apply database schema changes safely using Prisma.
+
+## Inputs
+- Updated Prisma schema
+- Database connection
+
+## Outputs
+- Applied database migrations
+- Updated database structure
+- Synced Prisma client
+
+## Steps
+1. Modify `schema.prisma`
+2. Run migration command:
+3. Verify tables in database
+4. Regenerate Prisma client
+5. Test changes in application
+
+## Rules
+- Never edit production DB manually
+- Always use migrations for schema changes
+- Use clear migration names
+- Verify changes before pushing
+- Do not commit sensitive data
+
+## Example
+```prisma
+model User {
+id    String @id @default(uuid())
+email String @unique
+password String
+}

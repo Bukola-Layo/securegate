@@ -1,0 +1,50 @@
+# Component Builder Skill
+
+## Purpose
+Create reusable UI components in a structured, scalable, and consistent way using modern frontend practices.
+
+## Inputs
+- Component name
+- Props definition
+- UI requirements (design or description)
+- Styling approach (e.g. Tailwind)
+
+## Outputs
+- A fully functional component file
+- Clean folder structure
+- Typed props (TypeScript)
+- Exported component ready for use
+
+## Steps
+1. Create a new folder under `/components/<ComponentName>`
+2. Create the main file: `<ComponentName>.tsx`
+3. Define TypeScript interface for props
+4. Build component UI using semantic HTML
+5. Apply styling (Tailwind or chosen system)
+6. Add basic accessibility (labels, roles if needed)
+7. Export the component as default
+8. (Optional) Add index.ts for cleaner imports
+
+## Rules
+- Use PascalCase for component names
+- Keep components small and focused (single responsibility)
+- Do not mix business logic inside UI components
+- Always type props (no `any`)
+- Prefer functional components with hooks
+- Ensure accessibility basics are covered
+
+## Example
+/components/Button/Button.tsx
+```tsx
+type ButtonProps = {
+  label: string;
+  onClick: () => void;
+};
+
+export default function Button({ label, onClick }: ButtonProps) {
+  return (
+    <button onClick={onClick} className="px-4 py-2 bg-black text-white">
+      {label}
+    </button>
+  );
+}
