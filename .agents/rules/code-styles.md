@@ -35,7 +35,7 @@ All files are `.ts` or `.tsx`. The `tsconfig.json` must include:
 | Types/Interfaces   | PascalCase         | `SessionUser`, `RegisterInput`   |
 | Zod schemas        | camelCase + Schema | `registerSchema`, `loginSchema`  |
 | DB models (Prisma) | PascalCase         | `User`, `VerificationToken`      |
-| Env vars           | SCREAMING_SNAKE    | `RESEND_API_KEY`                 |
+| Env vars           | SCREAMING_SNAKE    | `SMTP_PASS`                 |
 
 ---
 

@@ -108,7 +108,11 @@ These must exist in `.env.local` locally and in the Vercel dashboard for product
 DATABASE_URL=
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=
-RESEND_API_KEY=
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+SMTP_FROM=
 UPSTASH_REDIS_REST_URL=
 UPSTASH_REDIS_REST_TOKEN=
 ```

@@ -183,8 +183,8 @@ const data = parsed.data // typed and safe to use
 // Always assert they exist at startup, not lazily
 
 // src/lib/email.ts
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not set')
+if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  throw new Error('SMTP_HOST, SMTP_USER, and SMTP_PASS must be set')
 }
 ```
 
