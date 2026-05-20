@@ -3,11 +3,12 @@ import { render } from '@react-email/render'
 import VerificationEmail from '@/emails/VerificationEmail'
 import PasswordResetEmail from '@/emails/PasswordResetEmail'
 
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not set')
+function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY is not set')
+  }
+  return new Resend(process.env.RESEND_API_KEY)
 }
-
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 const APP_NAME = 'SecureGate'
 const FROM_EMAIL = 'SecureGate <onboarding@resend.dev>'
@@ -18,7 +19,7 @@ export async function sendVerificationEmail(email: string, token: string) {
   try {
     const html = await render(VerificationEmail({ verificationUrl: verifyUrl }))
     
-    const result = await resend.emails.send({
+    const result = await getResend().emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: `${APP_NAME} — Verify your email address`,
@@ -43,7 +44,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
   try {
     const html = await render(PasswordResetEmail({ resetUrl }))
     
-    const result = await resend.emails.send({
+    const result = await getResend().emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: `${APP_NAME} — Reset your password`,
