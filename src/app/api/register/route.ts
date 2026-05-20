@@ -46,8 +46,12 @@ export async function POST(req: Request) {
     })
 
     // Generate verification token and send email
-    const verificationToken = await createVerificationToken(email)
-    await sendVerificationEmail(email, verificationToken.token)
+    try {
+      const verificationToken = await createVerificationToken(email)
+      await sendVerificationEmail(email, verificationToken.token)
+    } catch (emailError) {
+      console.error('[REGISTER] Failed to send verification email:', emailError)
+    }
 
     return NextResponse.json(
       { message: 'Account created. Please check your email to verify your account.' },
