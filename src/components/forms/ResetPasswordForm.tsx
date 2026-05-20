@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
@@ -13,7 +12,6 @@ type ResetPasswordFormProps = {
 }
 
 export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
-  const router = useRouter()
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)

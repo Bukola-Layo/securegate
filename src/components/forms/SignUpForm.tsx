@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
@@ -15,7 +14,6 @@ type FieldErrors = {
 }
 
 export function SignUpForm() {
-  const router = useRouter()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
